@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Greeting from '@/components/Greeting.vue'
+import TheWelcome from '@/components/TheWelcome.vue'
 </script>
 
 <template>
@@ -9,8 +10,11 @@ import Greeting from '@/components/Greeting.vue'
       <Greeting />
     </div>
   </header>
+
   <main>
+    <TheWelcome />
   </main>
+
 </template>
 
 <style scoped>
