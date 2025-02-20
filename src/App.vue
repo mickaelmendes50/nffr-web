@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Greeting from '@/components/Greeting.vue'
-import TheWelcome from '@/components/TheWelcome.vue'
+import MultiStepForm from '@/components/MultiStepForm.vue'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import TheWelcome from '@/components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <MultiStepForm />
   </main>
 
 </template>
