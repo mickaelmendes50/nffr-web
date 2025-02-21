@@ -7,41 +7,54 @@
       </div>
 
       <!-- Options -->
-      <div class="form-container" v-if="!finished">
-        <h2>
-          {{
-            `${currentStep + 1}/${formData.steps.length}. ${formData.steps[currentStep]?.question ?? ''}`
-          }}
-        </h2>
-        <div class="form-options">
-          <label
-            v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
-            :key="index"
-          >
-            <input
-              type="radio"
-              v-model="formAnswers[currentStep]"
-              :id="`${currentStep}${index}`"
-              :value="index"
-            />
-            {{ alternative }}
-          </label>
-        </div>
-      </div>
+      <transition name="fade" class="flex-container">
+        <div v-show="showContent">
+          <div class="flex-container" v-if="!finished">
+            <h2>
+              {{
+                `${currentStep + 1}/${formData.steps.length}. ${formData.steps[currentStep]?.question ?? ''}`
+              }}
+            </h2>
+            <div class="separator" />
+            <div class="form-options">
+              <label
+                v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
+                :key="index"
+                class="form-option"
+              >
+                <input
+                  type="radio"
+                  v-model="formAnswers[currentStep]"
+                  :id="`${currentStep}${index}`"
+                  :value="index"
+                />
+                {{ alternative }}
+              </label>
+            </div>
+          </div>
 
-      <!-- Finished Container -->
-      <div v-else>
-        <h1>Finalizou!</h1>
-        <p>resultado: {{ formData.possibleResults[getMostFrequentValue(formAnswers)] }}</p>
-      </div>
+          <!-- Finished Container -->
+          <div v-else class="flex-container">
+            <h1>Finalizou!</h1>
+            <p>resultado: {{ formData.possibleResults[getMostFrequentValue(formAnswers)] }}</p>
+          </div>
+        </div>
+      </transition>
 
       <!-- Botões de Navegação -->
       <div class="navigation">
-        <button @click="prevStep" :disabled="currentStep === 0">Voltar</button>
-        <button v-if="currentStep <= formData.steps.length - 1" @click="nextStep">
-          {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
+        <button @click="prevStep" :disabled="currentStep === 0 || !showContent">
+          <ArrowLeft /> Voltar
         </button>
-        <button v-else @click="submitForm">Finalizar</button>
+        <button
+          :disabled="!showContent || !Number.isInteger(formAnswers[currentStep])"
+          v-if="currentStep <= formData.steps.length - 1"
+          @click="nextStep"
+        >
+          {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
+          <ArrowRight />
+        </button>
+        <button v-else-if="!finished" @click="submitForm">Finalizar</button>
       </div>
     </div>
   </div>
@@ -50,24 +63,40 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import formData from '@/data/formData.json'
+import ArrowLeft from '@/components/icons/ArrowLeft.vue'
+import ArrowRight from '@/components/icons/ArrowRight.vue'
 
 const currentStep = ref(0)
 const formAnswers = ref([])
 const finished = ref(false)
+const showContent = ref(true)
 
 const nextStep = () => {
+  showContent.value = false
+
   if (currentStep.value < formData.steps.length - 1) {
-    currentStep.value++
+    setTimeout(() => {
+      currentStep.value++
+      showContent.value = true
+    }, 500)
   } else {
-    finished.value = true
-    console.log(getMostFrequentValue(formAnswers.value))
+    setTimeout(() => {
+      finished.value = true
+      currentStep.value++
+      showContent.value = true
+    }, 500)
   }
 }
 
 const prevStep = () => {
+  showContent.value = false
+
   if (currentStep.value > 0) {
-    currentStep.value--
-    finished.value = false
+    setTimeout(() => {
+      currentStep.value--
+      finished.value = false
+      showContent.value = true
+    }, 500)
   }
 }
 
@@ -83,13 +112,12 @@ const getMostFrequentValue = (arr: number[]) => {
 }
 
 // Calcula a porcentagem da barra de progresso
-const progress = computed(() => ((currentStep.value + 1) / formData.length) * 100)
+const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
 </script>
 
 <style scoped>
 .container {
   display: flex;
-  height: 50vh;
   justify-content: center;
   align-items: center;
 }
@@ -97,7 +125,7 @@ const progress = computed(() => ((currentStep.value + 1) / formData.length) * 10
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   background: #282828;
   min-height: 40vh;
   padding: 2rem;
@@ -113,6 +141,11 @@ const progress = computed(() => ((currentStep.value + 1) / formData.length) * 10
 }
 
 button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
@@ -123,13 +156,14 @@ button {
 }
 
 button:disabled {
-  color: #282828;
-  background-color: #282828;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(124, 146, 164, 0.4);
   cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
   background-color: #0056b3;
+  gap: 12px;
 }
 
 /* Barra de Progresso */
@@ -148,17 +182,37 @@ button:hover:not(:disabled) {
   transition: width 0.3s ease-in-out;
 }
 
-.form-container {
+.form-options {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.form-option {
+  text-align: justify;
+}
+
+.flex-container {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   gap: 1rem;
 }
 
-.form-options {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  gap: 1rem;
+.separator {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+  background-color: rgba(124, 146, 164, 0.4);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active no Vue 2.1.8+ */ {
+  opacity: 0;
 }
 </style>
