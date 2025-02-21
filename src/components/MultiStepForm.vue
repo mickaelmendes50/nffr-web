@@ -1,58 +1,89 @@
 <template>
   <div class="container">
     <div class="card">
-      <component :is="steps[currentStep]" v-model="formData" />
-
-      <div class="navigation">
-        <button @click="prevStep" :disabled="currentStep === 0">Voltar</button>
-        <button v-if="currentStep < steps.length - 1" @click="nextStep">Próximo</button>
-        <button v-else @click="submitForm">Finalizar</button>
-      </div>
-
       <!-- Barra de progresso -->
       <div class="progress-bar">
         <div class="progress" :style="{ width: progress + '%' }"></div>
+      </div>
+
+      <!-- Options -->
+      <div class="form-container" v-if="!finished">
+        <h2>
+          {{
+            `${currentStep + 1}/${formData.steps.length}. ${formData.steps[currentStep]?.question ?? ''}`
+          }}
+        </h2>
+        <div class="form-options">
+          <label
+            v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
+            :key="index"
+          >
+            <input
+              type="radio"
+              v-model="formAnswers[currentStep]"
+              :id="`${currentStep}${index}`"
+              :value="index"
+            />
+            {{ alternative }}
+          </label>
+        </div>
+      </div>
+
+      <!-- Finished Container -->
+      <div v-else>
+        <h1>Finalizou!</h1>
+        <p>resultado: {{ formData.possibleResults[getMostFrequentValue(formAnswers)] }}</p>
+      </div>
+
+      <!-- Botões de Navegação -->
+      <div class="navigation">
+        <button @click="prevStep" :disabled="currentStep === 0">Voltar</button>
+        <button v-if="currentStep <= formData.steps.length - 1" @click="nextStep">
+          {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
+        </button>
+        <button v-else @click="submitForm">Finalizar</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, shallowRef, computed } from 'vue'
-import StepOne from './StepOne.vue'
-import StepTwo from './StepTwo.vue'
-import StepThree from './StepThree.vue'
+import { computed, ref } from 'vue'
+import formData from '@/data/formData.json'
 
-const steps = shallowRef([StepOne, StepTwo, StepThree])
 const currentStep = ref(0)
-
-const formData = ref({
-  nome: '',
-  email: '',
-  idade: '',
-  senha: '',
-  opcao: ''
-})
+const formAnswers = ref([])
+const finished = ref(false)
 
 const nextStep = () => {
-  if (currentStep.value < steps.value.length - 1) {
+  if (currentStep.value < formData.steps.length - 1) {
     currentStep.value++
+  } else {
+    finished.value = true
+    console.log(getMostFrequentValue(formAnswers.value))
   }
 }
 
 const prevStep = () => {
   if (currentStep.value > 0) {
     currentStep.value--
+    finished.value = false
   }
 }
 
-const submitForm = () => {
-  console.log('Dados do formulário:', formData.value)
-  alert('Formulário enviado!')
+const getMostFrequentValue = (arr: number[]) => {
+  const frequencyMap = arr.reduce((acc, item) => {
+    acc[item] = (acc[item] || 0) + 1
+    return acc
+  }, {})
+
+  return Object.keys(frequencyMap).reduce((mostFrequent, current) => {
+    return frequencyMap[current] > frequencyMap[mostFrequent] ? current : mostFrequent
+  })
 }
 
 // Calcula a porcentagem da barra de progresso
-const progress = computed(() => ((currentStep.value + 1) / steps.value.length) * 100)
+const progress = computed(() => ((currentStep.value + 1) / formData.length) * 100)
 </script>
 
 <style scoped>
@@ -64,7 +95,11 @@ const progress = computed(() => ((currentStep.value + 1) / steps.value.length) *
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background: #282828;
+  min-height: 40vh;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -75,7 +110,6 @@ const progress = computed(() => ((currentStep.value + 1) / steps.value.length) *
 .navigation {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 button {
@@ -112,5 +146,19 @@ button:hover:not(:disabled) {
   height: 100%;
   background-color: #007bff;
   transition: width 0.3s ease-in-out;
+}
+
+.form-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-options {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
 }
 </style>

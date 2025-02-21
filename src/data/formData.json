@@ -1,0 +1,30 @@
+{
+  "possibleResults": [
+    "Explorador",
+    "Socializador",
+    "Conquistador",
+    "Competidor"
+  ],
+  "steps": [
+    {
+      "question": "Qual tipo de atividade você mais prefere em um jogo?",
+      "alternatives": ["Explorar novos mundos", "Socializar com outros jogadores", "Completar desafios ou missões", "Competir contra outros jogadores"]
+    },
+    {
+      "question": "Como você costuma se sentir em relação a jogos de equipe?",
+      "alternatives": ["Eu gosto de formar equipes e jogar com amigos", "Prefiro jogar sozinho, mas não me importo de estar em uma equipe", "Não gosto de equipes, prefiro ser independente", "Amo competir com outras equipes"]
+    },
+    {
+      "question": "Qual é a principal razão pela qual você joga jogos?",
+      "alternatives": ["Explorar histórias e mundos novos", "Fazer amigos e interagir com outras pessoas", "Superar desafios e atingir objetivos", "Vencer competições e ser o melhor"]
+    },
+    {
+      "question": "Em um jogo multiplayer, qual papel você prefere desempenhar?",
+      "alternatives": ["Explorador, buscando novos lugares e recursos", "Líder, coordenando os outros jogadores", "Apoio, ajudando e socializando com outros jogadores", "Competidor, focado em vencer e ser o melhor"]
+    },
+    {
+      "question": "O que mais atrai você em um jogo online?",
+      "alternatives": ["A possibilidade de explorar o mundo do jogo", "A interação com outros jogadores", "Desafios e conquistas a serem alcançadas", "A competição e as classificações"]
+    }
+  ]
+}
