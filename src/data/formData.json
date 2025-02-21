@@ -1,30 +1,289 @@
 {
   "possibleResults": [
+    "Governante",
     "Explorador",
-    "Socializador",
-    "Conquistador",
-    "Competidor"
+    "Criador",
+    "Mago",
+    "Herói",
+    "Amante",
+    "Rebelde",
+    "Sábio",
+    "Cara comum",
+    "Bobo da corte",
+    "Cuidador",
+    "Inocente"
   ],
   "steps": [
     {
-      "question": "Qual tipo de atividade você mais prefere em um jogo?",
-      "alternatives": ["Explorar novos mundos", "Socializar com outros jogadores", "Completar desafios ou missões", "Competir contra outros jogadores"]
+      "question": "Se sua marca fosse uma pessoa, como ela se descreveria?",
+      "alternatives": [
+        "Eu sou um líder confiante, determinado e estratégico",
+        "Eu sou Espirito Livre, aventureiro, e sempre em busca de novas experiências",
+        "Sou criativo (a) , Inovador e tenho uma visão única de mundo",
+        "Tenho um ar misterioso e transformador, inspirando mudanças profundas",
+        "Sou corajoso(a) , e determinado (a) sempre superando desafios com bravura",
+        "Minha essência , é marcada por paixão , conexão e empatia emocional",
+        "Sou rebelde , sou ousado (a) , e sempre disposto (a) a desafiar o status quo",
+        "Valorizo o conhecimento, a reflexão e a sabedoria em cada ação",
+        "Sou simples Autêntico (a) e extremamente real, sem artifícios",
+        "Levo a vida com leveza , humor e espontaneidade",
+        "Tenho uma natureza protetora, empática e sempre pronta a cuidar dos outros",
+        "Sou otimista, puro (a) e confiante, com uma visão idealista do mundo"
+      ]
     },
     {
-      "question": "Como você costuma se sentir em relação a jogos de equipe?",
-      "alternatives": ["Eu gosto de formar equipes e jogar com amigos", "Prefiro jogar sozinho, mas não me importo de estar em uma equipe", "Não gosto de equipes, prefiro ser independente", "Amo competir com outras equipes"]
+      "question": "Como você gostaria que sua marca fosse lembrada?",
+      "alternatives": [
+        "Como uma referência de liderança e autoridade",
+        "Como uma marca acessível e amigável",
+        "Como inovadora e revolucionária",
+        "Como um símbolo de inspiração e emoção",
+        "Como uma marca que desafia limites",
+        "Como uma fonte de conhecimento e sabedoria",
+        "Como alguém que sempre cuida do outro",
+        "Como uma marca otimista e positiva",
+        "Como uma força de coragem e superação",
+        "Como uma criadora de coisas únicas",
+        "Como alguém que diverte e alegra as pessoas",
+        "Como uma marca mágica e transformadora"
+      ]
     },
     {
-      "question": "Qual é a principal razão pela qual você joga jogos?",
-      "alternatives": ["Explorar histórias e mundos novos", "Fazer amigos e interagir com outras pessoas", "Superar desafios e atingir objetivos", "Vencer competições e ser o melhor"]
+      "question": "Como quer que as pessoas te enxerguem?",
+      "alternatives": [
+        "Como uma referência de liderança e autoridade",
+        "Como alguém que se aventura e explora novos horizontes",
+        "Como uma fonte de inovação e criatividade",
+        "Como um agente de transformação e mistério",
+        "Como um exemplo de coragem e superação",
+        "Como alguém que inspira amor e conexão",
+        "Como alguém ousado e que desafia padrões",
+        "Como um sábio, profundo e cheio de conhecimento",
+        "Como uma pessoa autêntica, real e acessível",
+        "Como uma pessoa divertida e espontânea",
+        "Como alguém que cuida e protege",
+        "Como uma pessoa otimista e cheia de esperança"
+      ]
     },
     {
-      "question": "Em um jogo multiplayer, qual papel você prefere desempenhar?",
-      "alternatives": ["Explorador, buscando novos lugares e recursos", "Líder, coordenando os outros jogadores", "Apoio, ajudando e socializando com outros jogadores", "Competidor, focado em vencer e ser o melhor"]
+      "question": "Quais valores são inegociáveis para você?",
+      "alternatives": [
+        "Integridade, liderança e responsabilidade",
+        "Liberdade, aventura e autenticidade",
+        "Criatividade, originalidade e inovação",
+        "Transformação, intuição e mistério",
+        "Coragem, determinação e superação",
+        "Amor, conexão e paixão",
+        "Independência, rebeldia e quebra de regras.",
+        "Conhecimento, sabedoria e aprendizado constante",
+        "Simplicidade, autenticidade e proximidade",
+        "Alegria, espontaneidade e humor",
+        "Cuidado, proteção e empatia.",
+        "Otimismo, pureza e esperança"
+      ]
     },
     {
-      "question": "O que mais atrai você em um jogo online?",
-      "alternatives": ["A possibilidade de explorar o mundo do jogo", "A interação com outros jogadores", "Desafios e conquistas a serem alcançadas", "A competição e as classificações"]
+      "question": "Se pudesse ser representado por um personagem ou figura histórica, quem seria?",
+      "alternatives": [
+        "Winston Churchill ou outra figura de liderança forte",
+        "Indiana Jones ou um explorador aventureiro",
+        "Steve Jobs ou um ícone da inovação e criatividade",
+        "Merlin, o Mago, ou alguma figura mística e transformadora",
+        "Nelson Mandela ou outro herói inspirador",
+        "Cleópatra ou outra figura que exale paixão e sedução",
+        "Che Guevara ou uma figura revolucionária",
+        "Sócrates ou outra figura famosa por sua sabedoria",
+        "Mahatma Gandhi ou alguém que represente a simplicidade e autenticidade",
+        "Charlie Chaplin ou outra personalidade que represente o humor e a leveza",
+        "Madre Teresa ou uma figura que simbolize cuidado e proteção.",
+        "Anne Frank ou outra personalidade que represente a inocência e a esperança"
+      ]
+    },
+    {
+      "question": "O que mais te motiva no seu trabalho?",
+      "alternatives": [
+        "Criar impacto e mudança no mundo",
+        "Inspirar e emocionar as pessoas",
+        "Proteger e apoiar quem precisa",
+        "Explorar novas possibilidades e aprender sempre",
+        "Expressar criatividade e autenticidade",
+        "Levar leveza e alegria para as pessoas",
+        "Fazer coisas pelos os outros",
+        "Criar minhas próprias regras e ser livre",
+        "As conexões emocionais que crio, a paixão, beleza",
+        "Inovação , criar algo único e com significado",
+        "Exercer a liderança",
+        "Amo criar mudanças significativas através da inovação e sabedoria"
+      ]
+    },
+    {
+      "question": "Como você se expressa no digital?",
+      "alternatives": [
+        "De forma inspiradora e motivacional",
+        "incentivando a experimentar e descobrir novos mundos",
+        "Criatividade e originalidade",
+        "Provocando reflexões e mudanças",
+        "Promover performance, coragem e disciplina.",
+        "Valorizando a beleza, o amor e buscando sempre a harmonia e satisfação",
+        "Promovo novas maneiras de pensar e agir , a lutar contra o status ou sistema",
+        "Oferecendo soluções baseadas em profundo conhecimento e pesquisa",
+        "Crio conexão com as pessoas através da empatia e da autenticidade",
+        "Crio conexões emocionais com entretenimento, humor e alegria",
+        "Com um tom acolhedor e empático",
+        "Promovo a felicidade e bem estar, sempre com muita moralidade e desenvolvendo um mundo romantizado, trago leveza e paz"
+      ]
+    },
+    {
+      "question": "Como você quer que sua audiência se sinta?",
+      "alternatives": [
+        "Protegida e segura",
+        "Inspirada a transformar algo",
+        "Motivada a explorar novas ideias",
+        "Conectada emocionalmente",
+        "Livre para se expressar e ousar",
+        "Enfrentar desafios com coragem e determinação",
+        "seguros com o aprendizado e sabedoria que você possui",
+        "Bem cuidado",
+        "Estarem conectados com a realidade , de forma autêntica",
+        "Alegre , e bem humorado",
+        "Otimista , puro e leve",
+        "Destemido"
+      ]
+    },
+    {
+      "question": "Qual desses estilos visuais você mais se identifica?",
+      "alternatives": [
+        "Fotos com iluminação forte e contrastante, transmitindo poder",
+        "Estilo natural, espontâneo e sem poses muito formais com tons de verde  e ambientes abertos",
+        "Cores vibrantes, composições criativas e artísticas",
+        "Luz suave e atmosfera acolhedora",
+        "Tons escuros e uma pegada mais misteriosa",
+        "Estética sofisticada , expressão envolvente, cores quentes",
+        "Olhar determinado, iluminação forte, postura firme.",
+        "Tons contrastantes, fundo urbano, atitude marcante, sair do padrão",
+        "Cores neutras, olhar introspectivo, iluminação controlada",
+        "Estilo descontraído, ambiente cotidiano e expressão amigável",
+        "Expressões animadas, poses espontâneas, cores vibrantes",
+        "Tons suaves, posturas acolhedoras, luz natural"
+      ]
+    },
+    {
+      "question": "Qual desses estilos visuais você mais se identifica?",
+      "alternatives": [
+        "Fotos com iluminação forte e contrastante, transmitindo poder",
+        "Estilo natural, espontâneo e sem poses muito formais com tons de verde  e ambientes abertos",
+        "Cores vibrantes, composições criativas e artísticas",
+        "Luz suave e atmosfera acolhedora",
+        "Tons escuros e uma pegada mais misteriosa",
+        "Estética sofisticada , expressão envolvente, cores quentes",
+        "Olhar determinado, iluminação forte, postura firme.",
+        "Tons contrastantes, fundo urbano, atitude marcante, sair do padrão",
+        "Cores neutras, olhar introspectivo, iluminação controlada",
+        "Estilo descontraído, ambiente cotidiano e expressão amigável",
+        "Expressões animadas, poses espontâneas, cores vibrantes",
+        "Tons suaves, posturas acolhedoras, luz natural"
+      ]
+    },
+    {
+      "question": "Se sua marca fosse um cenário, qual seria?",
+      "alternatives": [
+        "Um palácio majestoso ou uma sala de reuniões de alto padrão, que transmita autoridade, tradição e sofisticação",
+        "Uma paisagem selvagem e aberta – como uma trilha em meio à natureza ou um deserto inspirador – que evoque liberdade e aventura",
+        "Um estúdio de arte vibrante e cheio de cores, repleto de obras e ideias inovadoras, onde a criatividade não tem limites",
+        "Um cenário místico, como uma floresta encantada com luzes e sombras mágicas, onde a transformação e o inesperado acontecem",
+        "Um ambiente que remeta a desafios e superação, como um campo de batalha moderno ou uma arena esportiva, simbolizando coragem e determinação",
+        "Um jardim secreto ou um cenário romântico com iluminação suave e detalhes elegantes, que convida ao encanto e à conexão emocional",
+        "Um cenário urbano alternativo, com grafites, ruas descoladas e um ar de rebeldia, rompendo com o convencional",
+        "Uma biblioteca clássica ou um ambiente acadêmico repleto de livros e história, que inspire conhecimento e reflexão",
+        "Um cenário cotidiano e acolhedor, como uma rua de bairro ou uma praça familiar, que reflete autenticidade e proximidade",
+        "Um parque de diversões ou um espaço cheio de cores, surpresas e humor, onde a alegria e a espontaneidade reinam",
+        "Um lar acolhedor ou um centro comunitário, com um ambiente seguro e caloroso, que transmite proteção e cuidado",
+        "Um cenário sereno e luminoso, como um campo florido ou uma praia ensolarada, que evoca pureza, otimismo e esperança"
+      ]
+    },
+    {
+      "question": "Qual dessas frases representa melhor sua relação com seus clientes?",
+      "alternatives": [
+        "Quero ajudá-los a se sentirem seguros e no controle de sua jornada, guiá-lo para o sucesso",
+        "Quero incentivá-los a descobrir novos horizontes e expandirem suas possibilidades.",
+        "Quero criar algo único e autêntico para eles, trazendo originalidade e inovação.",
+        "Quero guiá-los para transformar suas vidas e alcançar o extraordinário.",
+        "Quero desafiá-los a crescer, superar limites e alcançar grandes conquistas.",
+        "Quero criar conexões genuínas e significativas com cada um deles.",
+        "Quero ajudá-los a romper padrões e desafiar o status quo.",
+        "Quero compartilhar conhecimento e ajudá-los a ver o mundo com mais clareza.",
+        "Quero proporcionar um espaço seguro onde eles se sintam compreendidos e pertencentes.",
+        "Quero que eles se divirtam, aproveitem o processo e encontrem leveza no caminho.",
+        "Quero apoiá-los para que se sintam acolhidos e protegidos.",
+        "Quero inspirá-los a enxergar a beleza e simplicidade da jornada."
+      ]
+    },
+    {
+      "question": "Qual dessas palavras melhor representa você?",
+      "alternatives": [
+        "Poder",
+        "Liberdade",
+        "Criatividade",
+        "Magia",
+        "Superação",
+        "Amor",
+        "Autenticidade",
+        "Sabedoria",
+        "Justiça",
+        "Proteção",
+        "Esperança"
+      ]
+    },
+    {
+      "question": "Qual dessas frases representa melhor sua essência?",
+      "alternatives": [
+        "Eu sou uma pessoa de liderança, que traz ordem e direção com firmeza.",
+        "Eu sou aventureiro e inquieto, sempre em busca de novas experiências.",
+        "Minha essência é a criatividade; estou sempre inovando e transformando ideias em realidade",
+        "Sou transformador, capaz de provocar mudanças profundas e surpreendentes",
+        "Enfrento desafios com coragem e determinação, superando obstáculos com bravura",
+        "Minha essência é movida pela paixão e pelo desejo de criar conexões emocionais intensas",
+        "Tenho uma natureza rebelde, desafiando convenções e quebrando padrões estabelecidos",
+        "Valorizo o conhecimento e a sabedoria, buscando sempre a verdade e o aprendizado contínuo",
+        "Eu me defino pela autenticidade e simplicidade, mantendo uma conexão genuína com a realidade.",
+        "Eu levo a vida com leveza e humor, sempre pronto para trazer alegria e descontração",
+        "Minha essência está em cuidar, proteger e apoiar aqueles que me cercam",
+        "Sou otimista e puro, sempre vendo o lado positivo da vida e acreditando na bondade do mundo"
+      ]
+    },
+    {
+      "question": "Personalidade e valores - escolha uma opção:",
+      "alternatives": [
+        "Busco sempre explorar e descobrir o novo",
+        "Quero proteger e cuidar dos outros",
+        "Sou movido pelo desejo de liberdade e autenticidade",
+        "Meu propósito é criar e inovar",
+        "Acredito na magia e na transformação",
+        "Quero inspirar e emocionar as pessoas",
+        "Sou líder por natureza e gosto de comandar",
+        "Tenho um forte senso de justiça e coragem",
+        "Meu foco é buscar conhecimento e ensinar",
+        "Acredito que a simplicidade e a autenticidade são o segredo",
+        "Valorizo a leveza e a diversão na vida",
+        "Meu ideal é a pureza e a bondade"
+      ]
+    },
+    {
+      "question": "Qual destas frases você mais se identifica?",
+      "alternatives": [
+        "“O mundo precisa de ordem e liderança.”",
+        "“A liberdade é meu maior valor.”",
+        "“Criar algo único é minha missão.”",
+        "“Acredito no poder da transformação.”",
+        "“A justiça e a coragem movem meu coração.”",
+        "“O amor e a conexão são essenciais.”",
+        "“Regras foram feitas para serem quebradas.”",
+        "“A sabedoria é o bem mais valioso.”",
+        "“Todos somos iguais e devemos ser autênticos.”",
+        "“A vida deve ser leve e divertida.”",
+        "“Quero proteger e cuidar de quem precisa.”",
+        "“A bondade sempre vence no final.”"
+      ]
     }
   ]
 }
