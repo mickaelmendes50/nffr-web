@@ -34,7 +34,7 @@ onBeforeMount(() => {
   answers.value = new Array(props.data?.length)
 })
 
-const answers = defineModel<number[]>()
+const answers = defineModel<number[]>({ default: [] });
 </script>
 
 <style scoped>

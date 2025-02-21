@@ -54,7 +54,7 @@
           {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
           <ArrowRight />
         </button>
-        <button v-else-if="!finished" @click="submitForm">Finalizar</button>
+        <button v-else-if="!finished">Finalizar</button>
       </div>
     </div>
   </div>
@@ -100,16 +100,17 @@ const prevStep = () => {
   }
 }
 
-const getMostFrequentValue = (arr: number[]) => {
-  const frequencyMap = arr.reduce((acc, item) => {
-    acc[item] = (acc[item] || 0) + 1
-    return acc
-  }, {})
+const getMostFrequentValue = (arr: number[]): number => {
+  const frequencyMap: Record<number, number> = arr.reduce((acc, item) => {
+    acc[item] = (acc[item] || 0) + 1;
+    return acc;
+  }, {} as Record<number, number>);
 
-  return Object.keys(frequencyMap).reduce((mostFrequent, current) => {
-    return frequencyMap[current] > frequencyMap[mostFrequent] ? current : mostFrequent
-  })
-}
+  return +Object.keys(frequencyMap).reduce((mostFrequent, current) => {
+    return frequencyMap[+current] > frequencyMap[+mostFrequent] ? current : mostFrequent;
+  });
+};
+
 
 // Calcula a porcentagem da barra de progresso
 const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
