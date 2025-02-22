@@ -1,67 +1,14 @@
-/* color palette from <https://github.com/vuejs/theme> */
-:root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   font-weight: normal;
 }
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--on-background);
+  background: var(--background);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -83,4 +30,75 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.separator {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2px;
+  background-color: color-mix(in srgb, var(--primary), transparent 80%);
+}
+
+/* Buttons */
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: bold;
+  align-items: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 4px 5px var(--shadow-variant);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:disabled {
+  color: color-mix(in srgb, var(--on-primary), transparent 40%);
+  background-color: color-mix(in srgb, var(--primary), transparent 40%);
+  cursor: default;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--secondary);
+  gap: 12px;
+}
+
+/* Scrollbar */
+
+*::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--primary-container);
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: var(--primary-container);
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: var(--primary-container);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--secondary);
 }

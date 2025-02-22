@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="greetings">
     <h1>Leitura Arquetípica</h1>

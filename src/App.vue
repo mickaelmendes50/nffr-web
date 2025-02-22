@@ -14,12 +14,12 @@ import MultiStepForm from '@/components/MultiStepForm.vue'
   <main>
     <MultiStepForm />
   </main>
-
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -32,6 +32,7 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    margin-bottom: 0;
   }
 
   .logo {

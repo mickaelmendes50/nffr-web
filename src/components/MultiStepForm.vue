@@ -1,61 +1,70 @@
 <template>
-  <div class="container">
-    <div class="card">
-      <!-- Barra de progresso -->
-      <div class="progress-bar">
-        <div class="progress" :style="{ width: progress + '%' }"></div>
-      </div>
+  <div class="card">
+    <!-- Barra de progresso -->
+    <div class="progress-bar-container">
+      <div class="progress" :style="{ width: progress + 1 + '%' }"></div>
+    </div>
 
-      <!-- Options -->
-      <transition name="fade" class="flex-container">
-        <div v-show="showContent">
-          <div class="flex-container" v-if="!finished">
-            <h2>
-              {{
-                `${currentStep + 1}/${formData.steps.length}. ${formData.steps[currentStep]?.question ?? ''}`
-              }}
-            </h2>
-            <div class="separator" />
-            <div class="form-options">
-              <label
-                v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
-                :key="index"
-                class="form-option"
-              >
-                <input
-                  type="radio"
-                  v-model="formAnswers[currentStep]"
-                  :id="`${currentStep}${index}`"
-                  :value="index"
-                />
-                {{ alternative }}
-              </label>
-            </div>
-          </div>
+    <!-- Options -->
+    <transition name="fade" class="flex-container">
+      <div v-show="showContent">
+        <div class="flex-container" v-if="!finished">
+          <h2>
+            {{
+              `${currentStep + 1}/${formData.steps.length} ${formData.steps[currentStep]?.question ?? ''}`
+            }}
+          </h2>
 
-          <!-- Finished Container -->
-          <div v-else class="flex-container">
-            <h1>Finalizou!</h1>
-            <p>resultado: {{ formData.possibleResults[getMostFrequentValue(formAnswers)] }}</p>
+          <div class="separator" />
+
+          <div class="form-options">
+            <label
+              v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
+              :key="index"
+              class="form-option"
+            >
+              <input
+                type="radio"
+                v-model="formAnswers[currentStep]"
+                :id="`${currentStep}${index}`"
+                :value="index"
+              />
+              {{ alternative }}
+            </label>
           </div>
         </div>
-      </transition>
 
-      <!-- Botões de Navegação -->
-      <div class="navigation">
-        <button @click="prevStep" :disabled="currentStep === 0 || !showContent">
-          <ArrowLeft /> Voltar
-        </button>
-        <button
-          :disabled="!showContent || !Number.isInteger(formAnswers[currentStep])"
-          v-if="currentStep <= formData.steps.length - 1"
-          @click="nextStep"
-        >
-          {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
-          <ArrowRight />
-        </button>
-        <button v-else-if="!finished">Finalizar</button>
+        <!-- Finished Container -->
+        <div v-else class="flex-container result-container">
+          <h1>Você Finalizou!</h1>
+          <h2>
+            Você é:
+            {{
+              getMostFrequentValues(formAnswers)
+                .map((value) => formData.possibleResults[value])
+                .join(', ')
+            }}
+          </h2>
+        </div>
       </div>
+    </transition>
+
+    <div class="separator" />
+
+    <!-- Botões de Navegação -->
+    <div class="navigation">
+      <button @click="prevStep" :disabled="currentStep === 0 || !showContent">
+        <ArrowLeft /> Voltar
+      </button>
+
+      <button
+        :disabled="!showContent || !Number.isInteger(formAnswers[currentStep])"
+        v-if="currentStep <= formData.steps.length - 1"
+        @click="nextStep"
+      >
+        {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
+        <ArrowRight />
+      </button>
     </div>
   </div>
 </template>
@@ -100,40 +109,52 @@ const prevStep = () => {
   }
 }
 
-const getMostFrequentValue = (arr: number[]): number => {
-  const frequencyMap: Record<number, number> = arr.reduce((acc, item) => {
-    acc[item] = (acc[item] || 0) + 1;
-    return acc;
-  }, {} as Record<number, number>);
+const getMostFrequentValues = (arr: number[]): number[] => {
+  const frequencyMap: Record<number, number> = arr.reduce(
+    (acc, item) => {
+      acc[item] = (acc[item] || 0) + 1
+      return acc
+    },
+    {} as Record<number, number>,
+  )
 
-  return +Object.keys(frequencyMap).reduce((mostFrequent, current) => {
-    return frequencyMap[+current] > frequencyMap[+mostFrequent] ? current : mostFrequent;
-  });
-};
+  console.log(frequencyMap)
 
+  const a = Object.keys(frequencyMap)
+    .sort((a, b) => frequencyMap[+b] - frequencyMap[+a])
+    .slice(0, 3)
+    .map(Number)
 
+  console.log(a)
+
+  return a
+}
 // Calcula a porcentagem da barra de progresso
 const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background: #282828;
+  background: var(--surface-container-high);
+  color: var(--on-surface);
   min-height: 40vh;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 2.5rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px var(--shadow);
+  border: 1px solid var(--surface-container-highest);
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    min-height: auto;
+    max-height: none;
+  }
 }
 
 .navigation {
@@ -141,46 +162,19 @@ const progress = computed(() => ((currentStep.value + 1) / formData.steps.length
   justify-content: space-between;
 }
 
-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #7c92a4;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:disabled {
-  color: rgba(255, 255, 255, 0.3);
-  background-color: rgba(124, 146, 164, 0.4);
-  cursor: not-allowed;
-}
-
-button:hover:not(:disabled) {
-  background-color: #0056b3;
-  gap: 12px;
-}
-
-/* Barra de Progresso */
-.progress-bar {
+.progress-bar-container {
   width: 100%;
-  height: 5px;
-  background-color: #ddd;
   border-radius: 5px;
-  overflow: hidden;
-  margin-top: 20px;
+  height: var(--progress-bar-height);
+  background-color: var(--background);
+  box-shadow: 0 2px 5px var(--shadow-variant);
 }
 
 .progress {
-  height: 100%;
-  background-color: #007bff;
+  background-color: var(--primary);
+  height: var(--progress-bar-height);
   transition: width 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 .form-options {
@@ -191,7 +185,11 @@ button:hover:not(:disabled) {
 }
 
 .form-option {
-  text-align: justify;
+  text-align: left;
+}
+
+.form-option input {
+  margin-right: 5px;
 }
 
 .flex-container {
@@ -201,12 +199,9 @@ button:hover:not(:disabled) {
   gap: 1rem;
 }
 
-.separator {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 1px;
-  background-color: rgba(124, 146, 164, 0.4);
+.result-container {
+  align-items: center;
+  justify-content: center;
 }
 
 .fade-enter-active,
