@@ -118,16 +118,10 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     {} as Record<number, number>,
   )
 
-  console.log(frequencyMap)
-
-  const a = Object.keys(frequencyMap)
+  return Object.keys(frequencyMap)
     .sort((a, b) => frequencyMap[+b] - frequencyMap[+a])
     .slice(0, 3)
     .map(Number)
-
-  console.log(a)
-
-  return a
 }
 // Calcula a porcentagem da barra de progresso
 const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
