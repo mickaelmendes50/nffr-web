@@ -267,6 +267,128 @@
         "“Quero proteger e cuidar de quem precisa.”",
         "“A bondade sempre vence no final.”"
       ]
+    },
+    {
+      "question": "Como você lida com a responsabilidade em projetos importantes?",
+      "alternatives": [
+        "Eu gosto de estar no comando e garantir que tudo saia perfeito.",
+        "Prefiro explorar novas maneiras de conduzir o projeto.",
+        "Sinto prazer em criar soluções inovadoras.",
+        "Busco transformar a situação com ideias visionárias.",
+        "Vejo desafios como oportunidades para provar meu valor.",
+        "Gosto de me envolver emocionalmente e conectar pessoas.",
+        "Prefiro questionar o sistema e propor novas abordagens.",
+        "Analiso todos os dados antes de tomar decisões.",
+        "Gosto de colaborar de forma prática e simples.",
+        "Trago leveza e diversão para motivar a equipe.",
+        "Gosto de apoiar e proteger o time.",
+        "Acredito que o otimismo e a simplicidade são fundamentais."
+      ]
+    },
+    {
+      "question": "O que te motiva a sair da zona de conforto?",
+      "alternatives": [
+        "Liderar novas iniciativas e inspirar outros.",
+        "Explorar novos horizontes e possibilidades.",
+        "Criar algo único e autêntico.",
+        "Transformar desafios em grandes realizações.",
+        "Superar obstáculos e conquistar resultados.",
+        "Conectar-se a pessoas e experiências intensas.",
+        "Romper padrões e reinventar abordagens.",
+        "Buscar conhecimento profundo em novas áreas.",
+        "Compartilhar aprendizados e experiências comuns.",
+        "Viver o momento e aproveitar as oportunidades.",
+        "Cuidar dos outros enquanto exploro novas ideias.",
+        "Manter a leveza e acreditar em finais felizes."
+      ]
+    },
+    {
+      "question": "Em projetos, o que te atrai mais?",
+      "alternatives": [
+        "Liderar processos criativos.",
+        "Explorar novas ideias e possibilidades.",
+        "Criar algo completamente novo.",
+        "Transformar conceitos em soluções inovadoras.",
+        "Superar desafios com soluções criativas.",
+        "Incorporar paixão e emoção ao processo.",
+        "Desafiar o status quo com novas abordagens.",
+        "Aprofundar-se no conhecimento para criar.",
+        "Criar soluções práticas e acessíveis.",
+        "Trazer diversão e leveza para o processo.",
+        "Criar com foco em ajudar e acolher.",
+        "Criar com simplicidade e otimismo."
+      ]
+    },
+    {
+      "question": "Qual a sua visão para o futuro e como pretende realizá-la?",
+      "alternatives": [
+        "Liderando mudanças significativas.",
+        "Explorando possibilidades ilimitadas.",
+        "Criando soluções únicas e impactantes.",
+        "Transformando o mundo através de ideias visionárias.",
+        "Superando desafios para conquistar objetivos.",
+        "Inspirando paixão e conexão genuína.",
+        "Revolucionando sistemas com novas abordagens.",
+        "Compartilhando conhecimento e sabedoria.",
+        "Construindo um ambiente acessível a todos.",
+        "Tornando o processo leve e divertido.",
+        "Ajudando e guiando os outros na jornada.",
+        "Mantendo a simplicidade e positividade."
+      ]
+    },
+    {
+      "question": "Como você prefere passar um final de semana ideal?",
+      "alternatives": [
+        "Planejando atividades produtivas e organizadas.",
+        "Explorando novos lugares e experiências.",
+        "Criando algo novo, como arte, texto ou projeto pessoal.",
+        "Refletindo sobre novas ideias e possibilidades para o futuro.",
+        "Praticando esportes ou atividades desafiadoras.",
+        "Passando tempo de qualidade com pessoas queridas.",
+        "Quebrando a rotina e fazendo algo fora do comum.",
+        "Lendo, estudando ou aprendendo algo novo.",
+        "Relaxando em casa com coisas simples e agradáveis.",
+        "Se divertindo em festas ou com atividades leves e engraçadas.",
+        "Cuidando de alguém ou ajudando com tarefas importantes.",
+        "Aproveitando momentos tranquilos, cercado de paz e simplicidade."
+      ]
+    },
+
+
+
+    {
+      "question": "Qual é a principal qualidade que você mais valoriza em um amigo?",
+      "alternatives": [
+        "Capacidade de liderar e tomar decisões.",
+        "Espírito aventureiro e vontade de explorar.",
+        "Criatividade e habilidade de inovar.",
+        "Sabedoria e capacidade de inspirar mudanças.",
+        "Determinação e coragem para enfrentar desafios.",
+        "Capacidade de amar intensamente e se conectar.",
+        "Espírito livre e desejo de romper padrões.",
+        "Inteligência e gosto por conversas profundas.",
+        "Simplicidade e autenticidade.",
+        "Senso de humor e leveza para encarar a vida.",
+        "Empatia e disposição para cuidar dos outros.",
+        "Otimismo e positividade em todas as situações."
+      ]
+    },
+    {
+      "question": "Qual dessas frases mais reflete sua visão de vida?",
+      "alternatives": [
+        "Prefiro estar no controle do meu destino.",
+        "A vida é uma jornada cheia de descobertas.",
+        "A criatividade é a essência de tudo o que faço.",
+        "Transformar sonhos em realidade é minha missão.",
+        "Nada é impossível para quem se esforça de verdade.",
+        "A vida só faz sentido quando compartilhada com quem amamos.",
+        "As regras existem para serem quebradas.",
+        "A verdade está na busca pelo conhecimento.",
+        "A felicidade está nas pequenas coisas do dia a dia.",
+        "Viver é se divertir e aproveitar cada momento.",
+        "Ajudar os outros é a maior forma de realização.",
+        "A vida é simples, basta acreditar no melhor."
+      ]
     }
   ]
 }
