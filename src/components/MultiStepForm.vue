@@ -118,11 +118,26 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     {} as Record<number, number>,
   )
 
-  return Object.keys(frequencyMap)
+  const profiles = Object.keys(frequencyMap)
     .sort((a, b) => frequencyMap[+b] - frequencyMap[+a])
     .slice(0, 3)
     .map(Number)
+
+  sendEmail(profiles.map((value) => formData.possibleResults[value]).join(', '));
+  return profiles;
 }
+
+const sendEmail = async (profile: string) => {
+  return (await fetch('https://nffr-backend.vercel.app/send-email?name=Mickael%20Mesquita', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      profile: profile,
+    })
+  })).json();
+};
+
 // Calcula a porcentagem da barra de progresso
 const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
 </script>
