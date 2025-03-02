@@ -123,17 +123,17 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     .slice(0, 3)
     .map(Number)
 
-  sendEmail(profiles.map((value) => formData.possibleResults[value]).join(', '));
+  sendEmail(profiles.map((value) => formData.possibleResults[value]), 'Mickael Mesquita');
   return profiles;
 }
 
-const sendEmail = async (profile: string) => {
-  return (await fetch('https://nffr-backend.vercel.app/send-email?name=Mickael%20Mesquita', {
+const sendEmail = async (profile: string[], name: string) => {
+  return (await fetch('http://localhost:3000/send-email', {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      profile: profile,
+      name,
+      profile,
     })
   })).json();
 };
