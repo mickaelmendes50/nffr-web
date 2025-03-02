@@ -49,7 +49,7 @@
         <div v-else class="flex-container result-container">
           <h1>Você Finalizou!</h1>
           <h2>
-            Você é:
+            Arquétipos:
             {{
               getMostFrequentValues(formAnswers)
                 .map((value) => formData.possibleResults[value])
