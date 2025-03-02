@@ -86,6 +86,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import formData from '@/data/formData.json'
+import { sendEmail } from '@/api/email.ts'
 
 const currentStep = ref(0)
 const formAnswers = ref([])
@@ -139,17 +140,6 @@ const getMostFrequentValues = (arr: number[]): number[] => {
   sendEmail(profiles.map((value) => formData.possibleResults[value]), userName.value)
 
   return profiles;
-}
-
-const sendEmail = async (profile: string[], name: string) => {
-  return (await fetch('http://localhost:3000/send-email', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name,
-      profile,
-    })
-  })).json()
 }
 
 const progress = computed(() => ((currentStep.value + 1) / (formData.steps.length + 1)) * 100)
