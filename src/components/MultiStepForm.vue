@@ -11,21 +11,32 @@
         <div class="flex-container" v-if="!finished">
           <h2>
             {{
-              `${currentStep + 1}/${formData.steps.length} ${formData.steps[currentStep]?.question ?? ''}`
+              currentStep === 0
+                ? 'Vamos começar com seu nome'
+                : `${currentStep}/${formData.steps.length} ${formData.steps[currentStep - 1]?.question ?? ''}`
             }}
           </h2>
 
           <div class="separator" />
 
-          <div class="form-options">
+          <div v-if="currentStep === 0">
+            <input
+              type="text"
+              v-model="userName"
+              placeholder="Digite seu nome"
+              class="name-input"
+            />
+          </div>
+
+          <div class="form-options" v-else>
             <label
-              v-for="(alternative, index) in formData.steps[currentStep]?.alternatives"
+              v-for="(alternative, index) in formData.steps[currentStep - 1]?.alternatives"
               :key="index"
               class="form-option"
             >
               <input
                 type="radio"
-                v-model="formAnswers[currentStep]"
+                v-model="formAnswers[currentStep - 1]"
                 :id="`${currentStep}${index}`"
                 :value="index"
               />
@@ -54,16 +65,19 @@
     <!-- Botões de Navegação -->
     <div class="navigation">
       <button @click="prevStep" :disabled="currentStep === 0 || !showContent">
-        <ArrowLeft /> Voltar
+        Voltar
       </button>
 
       <button
-        :disabled="!showContent || !Number.isInteger(formAnswers[currentStep])"
-        v-if="currentStep <= formData.steps.length - 1"
+        :disabled="
+          !showContent ||
+          (currentStep === 0 && !userName) ||
+          (currentStep > 0 && !Number.isInteger(formAnswers[currentStep - 1]))
+        "
+        v-if="currentStep <= formData.steps.length"
         @click="nextStep"
       >
-        {{ currentStep !== formData.steps.length - 1 ? 'Próximo' : 'Finalizar' }}
-        <ArrowRight />
+        {{ currentStep !== formData.steps.length ? 'Próximo' : 'Finalizar' }}
       </button>
     </div>
   </div>
@@ -72,18 +86,17 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import formData from '@/data/formData.json'
-import ArrowLeft from '@/components/icons/ArrowLeft.vue'
-import ArrowRight from '@/components/icons/ArrowRight.vue'
 
 const currentStep = ref(0)
 const formAnswers = ref([])
 const finished = ref(false)
 const showContent = ref(true)
+const userName = ref('')
 
 const nextStep = () => {
   showContent.value = false
 
-  if (currentStep.value < formData.steps.length - 1) {
+  if (currentStep.value < formData.steps.length) {
     setTimeout(() => {
       currentStep.value++
       showContent.value = true
@@ -115,7 +128,7 @@ const getMostFrequentValues = (arr: number[]): number[] => {
       acc[item] = (acc[item] || 0) + 1
       return acc
     },
-    {} as Record<number, number>,
+    {} as Record<number, number>
   )
 
   const profiles = Object.keys(frequencyMap)
@@ -123,7 +136,8 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     .slice(0, 3)
     .map(Number)
 
-  sendEmail(profiles.map((value) => formData.possibleResults[value]), 'Mickael Mesquita');
+  sendEmail(profiles.map((value) => formData.possibleResults[value]), userName.value)
+
   return profiles;
 }
 
@@ -135,11 +149,10 @@ const sendEmail = async (profile: string[], name: string) => {
       name,
       profile,
     })
-  })).json();
-};
+  })).json()
+}
 
-// Calcula a porcentagem da barra de progresso
-const progress = computed(() => ((currentStep.value + 1) / formData.steps.length) * 100)
+const progress = computed(() => ((currentStep.value + 1) / (formData.steps.length + 1)) * 100)
 </script>
 
 <style scoped>
@@ -211,6 +224,14 @@ const progress = computed(() => ((currentStep.value + 1) / formData.steps.length
 .result-container {
   align-items: center;
   justify-content: center;
+}
+
+.name-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--surface-container-highest);
+  border-radius: 25px;
 }
 
 .fade-enter-active,
