@@ -137,7 +137,7 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     .slice(0, 3)
     .map(Number)
 
-  sendEmail(profiles.map((value) => formData.possibleResults[value]), userName.value)
+  sendEmail(profiles, userName.value)
 
   return profiles;
 }
