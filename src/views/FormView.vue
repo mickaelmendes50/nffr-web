@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import Greeting from '@/components/Greeting.vue'
 import MultiStepForm from '@/components/MultiStepForm.vue'
+import SimpleGridTemplate from '@/templates/SimpleGridTemplate.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="NFFR logo" class="logo" src="../assets/nffr-logo.png" />
-    <div class="wrapper">
-      <Greeting />
-    </div>
-  </header>
+  <SimpleGridTemplate>
+    <header>
+      <img alt="NFFR logo" class="logo" src="../assets/images/nffr-logo.png" />
+      <div class="wrapper">
+        <Greeting />
+      </div>
+    </header>
 
-  <main>
-    <MultiStepForm />
-  </main>
+    <main>
+      <MultiStepForm />
+    </main>
+  </SimpleGridTemplate>
 </template>
 
 <style scoped>

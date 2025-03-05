@@ -53,7 +53,7 @@
             {{
               getMostFrequentValues(formAnswers)
                 .map((value) => formData.possibleResults[value])
-                .join(', ')
+                .join('-')
             }}
           </h2>
         </div>
@@ -64,9 +64,7 @@
 
     <!-- Botões de Navegação -->
     <div class="navigation">
-      <button @click="prevStep" :disabled="currentStep === 0 || !showContent">
-        Voltar
-      </button>
+      <button @click="prevStep" :disabled="currentStep === 0 || !showContent">Voltar</button>
 
       <button
         :disabled="
@@ -87,6 +85,9 @@
 import { computed, ref } from 'vue'
 import formData from '@/data/formData.json'
 import { sendEmail } from '@/api/email.ts'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const currentStep = ref(0)
 const formAnswers = ref([])
@@ -107,6 +108,13 @@ const nextStep = () => {
       finished.value = true
       currentStep.value++
       showContent.value = true
+
+      const archetypes = getMostFrequentValues(formAnswers.value)
+
+      router.push({
+        path: 'resultados',
+        query: { archetypes },
+      })
     }, 500)
   }
 }
@@ -129,7 +137,7 @@ const getMostFrequentValues = (arr: number[]): number[] => {
       acc[item] = (acc[item] || 0) + 1
       return acc
     },
-    {} as Record<number, number>
+    {} as Record<number, number>,
   )
 
   const profiles = Object.keys(frequencyMap)
@@ -139,7 +147,7 @@ const getMostFrequentValues = (arr: number[]): number[] => {
 
   sendEmail(profiles, userName.value)
 
-  return profiles;
+  return profiles
 }
 
 const progress = computed(() => ((currentStep.value + 1) / (formData.steps.length + 1)) * 100)
