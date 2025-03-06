@@ -2,7 +2,7 @@
   <FreeGuideTemplate>
     <div v-for="(archetype, index) in archetypes" :key="index" class="archetype-container">
       <div class="archetype-info-container">
-        <img alt="logo" src="https://picsum.photos/200/300" />
+        <img alt="logo" :src="`${getImage(archetype, 0)}`" />
 
         <div class="archetype-info">
           <h2>{{ formData.possibleResults[archetype] }}</h2>
@@ -18,7 +18,7 @@
           :key="index"
           class="archetype-keyword"
         >
-          <img class="archetype-keyword-image" alt="logo" src="https://picsum.photos/200/300" />
+          <img class="archetype-keyword-image" alt="logo" :src="`${getImage(archetype, index + 1)}`" />
           <div class="archetype-keyword-label">{{ keyword }}</div>
         </div>
       </div>
@@ -44,6 +44,7 @@ import FreeGuideTemplate from '@/templates/FreeGuideTemplate.vue'
 import formData from '@/data/formData.json'
 import colorMap from '@/data/colorMap.json'
 import { useRoute } from 'vue-router'
+import { getImage } from '@/api/image.ts'
 
 const route = useRoute()
 
@@ -132,6 +133,13 @@ img {
     .archetype-keyword-label {
       border: 1px solid white;
       padding: 0.5rem 1rem;
+    }
+
+    .archetype-keyword-image {
+      max-width: 100%;
+      max-height: 300px;
+      width: auto;
+      height: auto;
     }
   }
 }
