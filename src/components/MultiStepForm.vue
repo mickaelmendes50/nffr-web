@@ -110,6 +110,7 @@ const nextStep = () => {
       showContent.value = true
 
       const archetypes = getMostFrequentValues(formAnswers.value)
+      sendEmail(archetypes, userName.value)
 
       router.push({
         path: 'resultados',
@@ -140,14 +141,10 @@ const getMostFrequentValues = (arr: number[]): number[] => {
     {} as Record<number, number>,
   )
 
-  const profiles = Object.keys(frequencyMap)
+  return Object.keys(frequencyMap)
     .sort((a, b) => frequencyMap[+b] - frequencyMap[+a])
     .slice(0, 3)
     .map(Number)
-
-  sendEmail(profiles, userName.value)
-
-  return profiles
 }
 
 const progress = computed(() => ((currentStep.value + 1) / (formData.steps.length + 1)) * 100)
