@@ -17,16 +17,14 @@
             }}
           </h2>
 
-          <div class="separator" />
-
-          <div v-if="currentStep === 0">
-            <input
-              type="text"
-              v-model="userName"
-              placeholder="Digite seu nome"
-              class="name-input"
-            />
-          </div>
+          <input
+            v-if="currentStep === 0"
+            type="text"
+            v-model="userName"
+            placeholder="Digite seu nome"
+            class="name-input"
+            @keydown.enter="onEnter"
+          />
 
           <div class="form-options" v-else>
             <label
@@ -94,6 +92,7 @@ const formAnswers = ref([])
 const finished = ref(false)
 const showContent = ref(true)
 const userName = ref('')
+const canEnterInput = ref(true)
 
 const nextStep = () => {
   showContent.value = false
@@ -127,7 +126,18 @@ const prevStep = () => {
       currentStep.value--
       finished.value = false
       showContent.value = true
+
+      if (currentStep.value === 0) {
+        canEnterInput.value = true
+      }
     }, 500)
+  }
+}
+
+const onEnter = () => {
+  if (canEnterInput.value) {
+    canEnterInput.value = false
+    nextStep()
   }
 }
 
@@ -157,10 +167,9 @@ const progress = computed(() => ((currentStep.value + 1) / (formData.steps.lengt
 .card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--between-gap);
   background: var(--surface-container-high);
   color: var(--on-surface);
-  min-height: 40vh;
   max-height: 80vh;
   overflow: auto;
   padding: 2.5rem 3rem;
@@ -216,7 +225,7 @@ const progress = computed(() => ((currentStep.value + 1) / (formData.steps.lengt
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--between-gap);
 }
 
 .result-container {
@@ -225,11 +234,10 @@ const progress = computed(() => ((currentStep.value + 1) / (formData.steps.lengt
 }
 
 .name-input {
-  width: 100%;
-  padding: 0.5rem;
+  padding: 0.7rem;
   font-size: 1rem;
   border: 1px solid var(--surface-container-highest);
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .fade-enter-active,
