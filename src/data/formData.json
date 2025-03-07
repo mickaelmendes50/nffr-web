@@ -132,6 +132,263 @@
         "Com um tom acolhedor e empático",
         "Promovo a felicidade e bem estar, sempre com muita moralidade e desenvolvendo um mundo romantizado, trago leveza e paz"
       ]
+    },
+    {
+      "question": "Como você quer que sua audiência se sinta?",
+      "alternatives": [
+        "Protegida e segura",
+        "Inspirada a transformar algo",
+        "Motivada a explorar novas ideias",
+        "Conectada emocionalmente",
+        "Livre para se expressar e ousar",
+        "Enfrentar desafios com coragem e determinação",
+        "seguros com o aprendizado e sabedoria que você possui",
+        "Bem cuidado",
+        "Estarem conectados com a realidade , de forma autêntica",
+        "Alegre , e bem humorado",
+        "Otimista , puro e leve",
+        "Destemido"
+      ]
+    },
+    {
+      "question": "Qual desses estilos visuais você mais se identifica?",
+      "alternatives": [
+        "Fotos com iluminação forte e contrastante, transmitindo poder",
+        "Estilo natural, espontâneo e sem poses muito formais com tons de verde  e ambientes abertos",
+        "Cores vibrantes, composições criativas e artísticas",
+        "Luz suave e atmosfera acolhedora",
+        "Tons escuros e uma pegada mais misteriosa",
+        "Estética sofisticada , expressão envolvente, cores quentes",
+        "Olhar determinado, iluminação forte, postura firme.",
+        "Tons contrastantes, fundo urbano, atitude marcante, sair do padrão",
+        "Cores neutras, olhar introspectivo, iluminação controlada",
+        "Estilo descontraído, ambiente cotidiano e expressão amigável",
+        "Expressões animadas, poses espontâneas, cores vibrantes",
+        "Tons suaves, posturas acolhedoras, luz natural"
+      ]
+    },
+    {
+      "question": "Se sua marca fosse um cenário, qual seria?",
+      "alternatives": [
+        "Um palácio majestoso ou uma sala de reuniões de alto padrão, que transmita autoridade, tradição e sofisticação",
+        "Uma paisagem selvagem e aberta – como uma trilha em meio à natureza ou um deserto inspirador – que evoque liberdade e aventura",
+        "Um estúdio de arte vibrante e cheio de cores, repleto de obras e ideias inovadoras, onde a criatividade não tem limites",
+        "Um cenário místico, como uma floresta encantada com luzes e sombras mágicas, onde a transformação e o inesperado acontecem",
+        "Um ambiente que remeta a desafios e superação, como um campo de batalha moderno ou uma arena esportiva, simbolizando coragem e determinação",
+        "Um jardim secreto ou um cenário romântico com iluminação suave e detalhes elegantes, que convida ao encanto e à conexão emocional",
+        "Um cenário urbano alternativo, com grafites, ruas descoladas e um ar de rebeldia, rompendo com o convencional",
+        "Uma biblioteca clássica ou um ambiente acadêmico repleto de livros e história, que inspire conhecimento e reflexão",
+        "Um cenário cotidiano e acolhedor, como uma rua de bairro ou uma praça familiar, que reflete autenticidade e proximidade",
+        "Um parque de diversões ou um espaço cheio de cores, surpresas e humor, onde a alegria e a espontaneidade reinam",
+        "Um lar acolhedor ou um centro comunitário, com um ambiente seguro e caloroso, que transmite proteção e cuidado",
+        "Um cenário sereno e luminoso, como um campo florido ou uma praia ensolarada, que evoca pureza, otimismo e esperança"
+      ]
+    },
+    {
+      "question": "Qual dessas frases representa melhor sua relação com seus clientes?",
+      "alternatives": [
+        "Quero ajudá-los a se sentirem seguros e no controle de sua jornada, guiá-lo para o sucesso",
+        "Quero incentivá-los a descobrir novos horizontes e expandirem suas possibilidades.",
+        "Quero criar algo único e autêntico para eles, trazendo originalidade e inovação.",
+        "Quero guiá-los para transformar suas vidas e alcançar o extraordinário.",
+        "Quero desafiá-los a crescer, superar limites e alcançar grandes conquistas.",
+        "Quero criar conexões genuínas e significativas com cada um deles.",
+        "Quero ajudá-los a romper padrões e desafiar o status quo.",
+        "Quero compartilhar conhecimento e ajudá-los a ver o mundo com mais clareza.",
+        "Quero proporcionar um espaço seguro onde eles se sintam compreendidos e pertencentes.",
+        "Quero que eles se divirtam, aproveitem o processo e encontrem leveza no caminho.",
+        "Quero apoiá-los para que se sintam acolhidos e protegidos.",
+        "Quero inspirá-los a enxergar a beleza e simplicidade da jornada."
+      ]
+    },
+    {
+      "question": "Qual dessas palavras melhor representa você?",
+      "alternatives": [
+        "Poder",
+        "Liberdade",
+        "Criatividade",
+        "Magia",
+        "Superação",
+        "Amor",
+        "Autenticidade",
+        "Sabedoria",
+        "Justiça",
+        "Proteção",
+        "Esperança"
+      ]
+    },
+    {
+      "question": "Qual dessas frases representa melhor sua essência?",
+      "alternatives": [
+        "Eu sou uma pessoa de liderança, que traz ordem e direção com firmeza.",
+        "Eu sou aventureiro e inquieto, sempre em busca de novas experiências.",
+        "Minha essência é a criatividade; estou sempre inovando e transformando ideias em realidade",
+        "Sou transformador, capaz de provocar mudanças profundas e surpreendentes",
+        "Enfrento desafios com coragem e determinação, superando obstáculos com bravura",
+        "Minha essência é movida pela paixão e pelo desejo de criar conexões emocionais intensas",
+        "Tenho uma natureza rebelde, desafiando convenções e quebrando padrões estabelecidos",
+        "Valorizo o conhecimento e a sabedoria, buscando sempre a verdade e o aprendizado contínuo",
+        "Eu me defino pela autenticidade e simplicidade, mantendo uma conexão genuína com a realidade.",
+        "Eu levo a vida com leveza e humor, sempre pronto para trazer alegria e descontração",
+        "Minha essência está em cuidar, proteger e apoiar aqueles que me cercam",
+        "Sou otimista e puro, sempre vendo o lado positivo da vida e acreditando na bondade do mundo"
+      ]
+    },
+    {
+      "question": "Personalidade e valores - escolha uma opção:",
+      "alternatives": [
+        "Busco sempre explorar e descobrir o novo",
+        "Quero proteger e cuidar dos outros",
+        "Sou movido pelo desejo de liberdade e autenticidade",
+        "Meu propósito é criar e inovar",
+        "Acredito na magia e na transformação",
+        "Quero inspirar e emocionar as pessoas",
+        "Sou líder por natureza e gosto de comandar",
+        "Tenho um forte senso de justiça e coragem",
+        "Meu foco é buscar conhecimento e ensinar",
+        "Acredito que a simplicidade e a autenticidade são o segredo",
+        "Valorizo a leveza e a diversão na vida",
+        "Meu ideal é a pureza e a bondade"
+      ]
+    },
+    {
+      "question": "Qual destas frases você mais se identifica?",
+      "alternatives": [
+        "“O mundo precisa de ordem e liderança.”",
+        "“A liberdade é meu maior valor.”",
+        "“Criar algo único é minha missão.”",
+        "“Acredito no poder da transformação.”",
+        "“A justiça e a coragem movem meu coração.”",
+        "“O amor e a conexão são essenciais.”",
+        "“Regras foram feitas para serem quebradas.”",
+        "“A sabedoria é o bem mais valioso.”",
+        "“Todos somos iguais e devemos ser autênticos.”",
+        "“A vida deve ser leve e divertida.”",
+        "“Quero proteger e cuidar de quem precisa.”",
+        "“A bondade sempre vence no final.”"
+      ]
+    },
+    {
+      "question": "Como você lida com a responsabilidade em projetos importantes?",
+      "alternatives": [
+        "Eu gosto de estar no comando e garantir que tudo saia perfeito.",
+        "Prefiro explorar novas maneiras de conduzir o projeto.",
+        "Sinto prazer em criar soluções inovadoras.",
+        "Busco transformar a situação com ideias visionárias.",
+        "Vejo desafios como oportunidades para provar meu valor.",
+        "Gosto de me envolver emocionalmente e conectar pessoas.",
+        "Prefiro questionar o sistema e propor novas abordagens.",
+        "Analiso todos os dados antes de tomar decisões.",
+        "Gosto de colaborar de forma prática e simples.",
+        "Trago leveza e diversão para motivar a equipe.",
+        "Gosto de apoiar e proteger o time.",
+        "Acredito que o otimismo e a simplicidade são fundamentais."
+      ]
+    },
+    {
+      "question": "O que te motiva a sair da zona de conforto?",
+      "alternatives": [
+        "Liderar novas iniciativas e inspirar outros.",
+        "Explorar novos horizontes e possibilidades.",
+        "Criar algo único e autêntico.",
+        "Transformar desafios em grandes realizações.",
+        "Superar obstáculos e conquistar resultados.",
+        "Conectar-se a pessoas e experiências intensas.",
+        "Romper padrões e reinventar abordagens.",
+        "Buscar conhecimento profundo em novas áreas.",
+        "Compartilhar aprendizados e experiências comuns.",
+        "Viver o momento e aproveitar as oportunidades.",
+        "Cuidar dos outros enquanto exploro novas ideias.",
+        "Manter a leveza e acreditar em finais felizes."
+      ]
+    },
+    {
+      "question": "Em projetos, o que te atrai mais?",
+      "alternatives": [
+        "Liderar processos criativos.",
+        "Explorar novas ideias e possibilidades.",
+        "Criar algo completamente novo.",
+        "Transformar conceitos em soluções inovadoras.",
+        "Superar desafios com soluções criativas.",
+        "Incorporar paixão e emoção ao processo.",
+        "Desafiar o status quo com novas abordagens.",
+        "Aprofundar-se no conhecimento para criar.",
+        "Criar soluções práticas e acessíveis.",
+        "Trazer diversão e leveza para o processo.",
+        "Criar com foco em ajudar e acolher.",
+        "Criar com simplicidade e otimismo."
+      ]
+    },
+    {
+      "question": "Qual a sua visão para o futuro e como pretende realizá-la?",
+      "alternatives": [
+        "Liderando mudanças significativas.",
+        "Explorando possibilidades ilimitadas.",
+        "Criando soluções únicas e impactantes.",
+        "Transformando o mundo através de ideias visionárias.",
+        "Superando desafios para conquistar objetivos.",
+        "Inspirando paixão e conexão genuína.",
+        "Revolucionando sistemas com novas abordagens.",
+        "Compartilhando conhecimento e sabedoria.",
+        "Construindo um ambiente acessível a todos.",
+        "Tornando o processo leve e divertido.",
+        "Ajudando e guiando os outros na jornada.",
+        "Mantendo a simplicidade e positividade."
+      ]
+    },
+    {
+      "question": "Como você prefere passar um final de semana ideal?",
+      "alternatives": [
+        "Planejando atividades produtivas e organizadas.",
+        "Explorando novos lugares e experiências.",
+        "Criando algo novo, como arte, texto ou projeto pessoal.",
+        "Refletindo sobre novas ideias e possibilidades para o futuro.",
+        "Praticando esportes ou atividades desafiadoras.",
+        "Passando tempo de qualidade com pessoas queridas.",
+        "Quebrando a rotina e fazendo algo fora do comum.",
+        "Lendo, estudando ou aprendendo algo novo.",
+        "Relaxando em casa com coisas simples e agradáveis.",
+        "Se divertindo em festas ou com atividades leves e engraçadas.",
+        "Cuidando de alguém ou ajudando com tarefas importantes.",
+        "Aproveitando momentos tranquilos, cercado de paz e simplicidade."
+      ]
+    },
+
+
+
+    {
+      "question": "Qual é a principal qualidade que você mais valoriza em um amigo?",
+      "alternatives": [
+        "Capacidade de liderar e tomar decisões.",
+        "Espírito aventureiro e vontade de explorar.",
+        "Criatividade e habilidade de inovar.",
+        "Sabedoria e capacidade de inspirar mudanças.",
+        "Determinação e coragem para enfrentar desafios.",
+        "Capacidade de amar intensamente e se conectar.",
+        "Espírito livre e desejo de romper padrões.",
+        "Inteligência e gosto por conversas profundas.",
+        "Simplicidade e autenticidade.",
+        "Senso de humor e leveza para encarar a vida.",
+        "Empatia e disposição para cuidar dos outros.",
+        "Otimismo e positividade em todas as situações."
+      ]
+    },
+    {
+      "question": "Qual dessas frases mais reflete sua visão de vida?",
+      "alternatives": [
+        "Prefiro estar no controle do meu destino.",
+        "A vida é uma jornada cheia de descobertas.",
+        "A criatividade é a essência de tudo o que faço.",
+        "Transformar sonhos em realidade é minha missão.",
+        "Nada é impossível para quem se esforça de verdade.",
+        "A vida só faz sentido quando compartilhada com quem amamos.",
+        "As regras existem para serem quebradas.",
+        "A verdade está na busca pelo conhecimento.",
+        "A felicidade está nas pequenas coisas do dia a dia.",
+        "Viver é se divertir e aproveitar cada momento.",
+        "Ajudar os outros é a maior forma de realização.",
+        "A vida é simples, basta acreditar no melhor."
+      ]
     }
   ],
   "descriptions": [
@@ -175,20 +432,6 @@
     ["Alegria", "Humor", "Espontaneidade"],
     ["Generosidade", "Proteção", "Compaixão"],
     ["Pureza", "Otimismo", "Simplicidade"]
-  ],
-  "images": [
-    "@/assets/images/archetypes/Governante",
-    "@/assets/images/archetypes/Explorador",
-    "@/assets/images/archetypes/Criador",
-    "@/assets/images/archetypes/Mago",
-    "@/assets/images/archetypes/Heroi",
-    "@/assets/images/archetypes/Amante",
-    "@/assets/images/archetypes/Rebelde",
-    "@/assets/images/archetypes/Sabio",
-    "@/assets/images/archetypes/Cara comum",
-    "@/assets/images/archetypes/Bobo da corte",
-    "@/assets/images/archetypes/Cuidador",
-    "@/assets/images/archetypes/Inocente"
   ],
   "colors": [
     [
