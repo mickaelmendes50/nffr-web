@@ -23,6 +23,7 @@ import SimpleGridTemplate from '@/templates/SimpleGridTemplate.vue'
 header {
   line-height: 1.5;
   margin-bottom: 30px;
+  padding-right: 0;
 }
 
 .logo {
@@ -36,6 +37,7 @@ header {
     display: flex;
     place-items: center;
     margin-bottom: 0;
+    padding-right: var(--between-gap);
   }
 
   .logo {
